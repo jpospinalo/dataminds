@@ -5,6 +5,5 @@ Dataminds project
 ---
 
 ![Project DataMinds](/images/data.png)
-![Joplin icon](https://git.io/JenGk)
 
 ---
