@@ -1,9 +1,9 @@
 from sqlmodel import create_engine
 
-username = 'admin'
+username = 'root'
 password = 'adminadmin'
-host = 'proyecto-dataminds.cfzybbinygh8.us-east-1.rds.amazonaws.com'
-database = 'DataMinds'
+host = 'localhost'
+database = 'prueba'
  
 
 # Create a SQLModel engine
