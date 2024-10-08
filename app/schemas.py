@@ -1,12 +1,15 @@
 from pydantic import BaseModel
 
 class BaseClient(BaseModel):
-    first_name: str
-    last_name: str
-    age: int | None = None
+    id_cliente: int 
+    tipo_documento: str
+    primer_nombre_cliente: str
+    segundo_nombre_cliente: str | None = None
+    primer_apellido_cliente: str
+    segundo_apellido_cliente: str | None = None
 
 class ClientIn(BaseClient):
     pass
 
 class ClientOut(BaseClient):
-    id: int
+    pass
