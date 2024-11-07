@@ -6,9 +6,16 @@ class Client(SQLModel, table=True):
     __tablename__ = "cliente"
  
     id_cliente: int | None = Field(default=None, primary_key=True)
-    tipo_documento: str
+    tipo_documento: str 
     primer_nombre_cliente: str
     segundo_nombre_cliente: str | None = None
     primer_apellido_cliente: str
     segundo_apellido_cliente: str | None = None
 
+class Empresa(SQLModel, table=True):
+    
+    __tablename__ = "empresa"
+ 
+    id_empresa: int | None = Field(default=None, primary_key=True)
+    nombre_empresa: str 
+    

@@ -1,0 +1,19 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+ 
+# Ignore __pycache__ directories
+__pycache__/
+ 
+# Ignore specific development environment files (optional)
+*.env
+*.venv
+env/
+venv/
+ENV/
+VENV/
+ 
+# Ignore logs and temporary files
+*.log
+*.tmp

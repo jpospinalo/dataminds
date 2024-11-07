@@ -2,7 +2,7 @@ from sqlmodel import create_engine
 
 username = 'admin'
 password = 'adminadmin'
-host = 'proyecto-dataminds.cfzybbinygh8.us-east-1.rds.amazonaws.com'
+host = '35.170.189.6'
 database = 'dataminds'
 
 
