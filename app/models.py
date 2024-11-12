@@ -1,6 +1,6 @@
 from sqlmodel import Field, SQLModel, create_engine
 
-
+# Conexión con la base de datos de la tabla Cliente.
 class Client(SQLModel, table=True):
     
     __tablename__ = "cliente"
@@ -12,10 +12,21 @@ class Client(SQLModel, table=True):
     primer_apellido_cliente: str
     segundo_apellido_cliente: str | None = None
 
+# Conexión con la base de datos de la tabla Empresa.
 class Empresa(SQLModel, table=True):
     
     __tablename__ = "empresa"
  
     id_empresa: int | None = Field(default=None, primary_key=True)
-    nombre_empresa: str 
+    nombre_empresa: str
+
+# Conexión con la base de datos de la tabla Obligación.
+class Obligacion(SQLModel, table=True):
+    
+    __tablename__ = "obligacion"
+ 
+    id_obligacion: int | None = Field(default=None, primary_key=True)
+    id_cliente: str
+    id_empresa: str 
+    
     
