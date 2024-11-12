@@ -12,7 +12,6 @@ def create_obligacion(Obligacion_in: ObligacionIn) -> ObligacionOut:
         session.refresh(new_obligacion)
     return new_obligacion
 
-
 def get_obligacion_by_id(id_obligacion: int) -> ObligacionOut | None:
     with Session(engine) as session:
         obligacion = session.get(Obligacion, id_obligacion)
