@@ -23,3 +23,14 @@ class EmpresaIn(BaseEmpresa):
 
 class EmpresaOut(BaseEmpresa):
     pass
+
+class BaseObligacion(BaseModel):
+    id_obligacion: int 
+    id_cliente: str
+    id_empresa: str 
+    
+class ObligacionIn(BaseObligacion):
+    pass
+
+class ObligacionOut(BaseObligacion):
+    pass
