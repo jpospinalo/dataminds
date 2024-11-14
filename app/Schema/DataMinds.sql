@@ -33,10 +33,10 @@ DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
   `id_cliente` int unsigned NOT NULL,
   `tipo_documento` varchar(50) NOT NULL,
-  `primer_nombre_cliente` varchar(100) NOT NULL,
-  `segundo_nombre_cliente` varchar(100) DEFAULT NULL,
-  `primer_apellido_cliente` varchar(100) NOT NULL,
-  `segundo_apellido_cliente` varchar(100) DEFAULT NULL,
+  `primer_nombre` varchar(100) NOT NULL,
+  `segundo_nombre` varchar(100) DEFAULT NULL,
+  `primer_apellido` varchar(100) NOT NULL,
+  `segundo_apellido` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_cliente`),
   UNIQUE KEY `id_cliente` (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
