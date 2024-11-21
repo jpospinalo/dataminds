@@ -1,7 +1,8 @@
-from fastapi import FastAPI, APIRouter, HTTPException
-from typing import List
+from fastapi import FastAPI, APIRouter, HTTPException, Path
+from typing import List, Annotated
 from .schemas import ClientIn, ClientOut
 from .crud import get_all_clients, get_client_by_id, create_client, delete_client, update_client
+
 
 router = APIRouter()
 
@@ -17,7 +18,7 @@ async def read_all_clients():
     return clients
 
 @router.get("/client/{client_id}", response_model=ClientOut, tags=['Cliente'])
-async def read_client_by_id(client_id: int):
+async def read_client_by_id(client_id: Annotated[int, Path(title="Id cliente en la base de datos", gt=0, le=100)]): 
     """
     Obtener un cliente por su ID.
     Retorna un cliente si es encontrado, de lo contrario lanza un error 404.
