@@ -18,14 +18,24 @@ async def read_all_clients():
     return clients
 
 @router.get("/client/{client_id}", response_model=ClientOut, tags=['Cliente'])
-async def read_client_by_id(client_id: Annotated[int, Path(title="Id cliente en la base de datos", gt=0, le=100)]): 
+async def read_client_by_id(
+    client_id: Annotated[
+        int, 
+        Path(
+            title="id cliente",
+            description="Identificador del cliente en la base de datos", 
+            gt=0, 
+            le=100
+        )
+    ]
+): 
     """
     Obtener un cliente por su ID.
     Retorna un cliente si es encontrado, de lo contrario lanza un error 404.
     """
     client = get_client_by_id(client_id)
     if client is None:
-        raise HTTPException(status_code=404, detail="Client not found")
+        raise HTTPException(status_code=404, detail="Cliente no encontrado")
     return client
 
 @router.post("/client/", response_model=ClientOut, tags=['Cliente'])
