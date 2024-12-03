@@ -1,8 +1,8 @@
 from fastapi import FastAPI
-from .routes import router
+from .routes_cliente import router
 from .routes_empresa import router_empresa
 from .routes_obligacion import router_obligacion
-from .crud import *
+from .crud_cliente import *
 from .crud_empresa import *
 from .crud_obligacion import *
 import sys
