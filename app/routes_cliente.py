@@ -20,12 +20,11 @@ async def read_all_clients():
 @router.get("/client/{client_id}", response_model=ClientOut, tags=['Cliente'])
 async def read_client_by_id(
     client_id: Annotated[
-        int, 
+        str, 
         Path(
             title="id cliente",
             description="Identificador del cliente en la base de datos", 
-            gt=0, 
-            le=100
+            max_lenght = 50
         )
     ]
 ): 
@@ -48,7 +47,7 @@ async def create_client_db(client: ClientIn):
     return created_client
 
 @router.delete("/client/{client_id}", response_model=ClientOut, tags=['Cliente'])
-async def delete_client_db(client_id: int):
+async def delete_client_db(client_id: str):
     """
     Eliminar un cliente de la base de datos por su ID.
     Retorna el cliente eliminado si es encontrado, de lo contrario lanza un error 404.
@@ -59,7 +58,7 @@ async def delete_client_db(client_id: int):
     return deleted_client
 
 @router.put("/client/{client_id}", response_model=ClientOut, tags=['Cliente'])
-async def update_client_db(client_id: int, new_client: ClientIn):
+async def update_client_db(client_id: str, new_client: ClientIn):
     """
     Actualizar la información de un cliente existente.
     Retorna el cliente actualizado.

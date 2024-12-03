@@ -5,7 +5,7 @@ class Client(SQLModel, table=True):
     
     __tablename__ = "cliente"
  
-    id_cliente: str | None = Field(primary_key=True)
+    id_cliente: int | None = Field(primary_key=True)
     tipo_documento: str 
     primer_nombre: str
     segundo_nombre: str | None = None
@@ -16,12 +16,12 @@ class Client(SQLModel, table=True):
 # Conexión con la base de datos de la tabla Obligación.
 class Obligacion(SQLModel, table=True):
     
-    __tablename__ = "obligacion"
+    #__tablename__ = "obligacion"
  
     id_obligacion: int | None = Field(primary_key=True)
     id_empresa: int = Field(foreign_key="empresa.id_empresa")
 
-    id_cliente: str = Field(foreign_key="cliente.id_cliente")
+    id_cliente: int = Field(foreign_key="cliente.id_cliente")
     cliente : Client = Relationship(back_populates="obligaciones")
 
     

@@ -12,7 +12,7 @@ def create_client(client_in: ClientIn) -> ClientOut:
         session.refresh(new_client)
     return new_client
 
-def get_client_by_id(client_id: int) -> ClientOut | None:
+def get_client_by_id(client_id: str) -> ClientOut | None:
     with Session(engine) as session:
         client = session.get(Client, client_id)
         return client
@@ -23,7 +23,7 @@ def get_all_clients() -> List[ClientOut]:
         clients = session.exec(statement).all()
         return clients
 
-def update_client(client_id: int, new_client: ClientIn) -> ClientOut | None:
+def update_client(client_id: str, new_client: ClientIn) -> ClientOut | None:
     with Session(engine) as session:    
             db_client = session.get(Client, client_id)
             client_data = new_client.model_dump(exclude_unset=True)
@@ -35,7 +35,7 @@ def update_client(client_id: int, new_client: ClientIn) -> ClientOut | None:
             session.refresh(db_client)
             return db_client
 
-def delete_client(client_id: int):
+def delete_client(client_id: str):
     with Session(engine) as session:
         client = session.get(Client, client_id)
         if client:

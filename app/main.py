@@ -11,3 +11,5 @@ app = FastAPI()
 app.include_router(router)  # Incluir las rutas
 app.include_router(router_empresa)
 app.include_router(router_obligacion)
+
+
