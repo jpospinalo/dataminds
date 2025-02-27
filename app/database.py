@@ -2,8 +2,8 @@ from sqlmodel import create_engine, SQLModel
 
 username = 'admin'
 password = 'adminadmin'
-host = '35.170.189.6'
-database = 'dataminds2'
+host = '54.156.255.195'
+database = 'dataminds'
 
 
 # Create a SQLModel engine
