@@ -1,4 +1,19 @@
 from sqlmodel import Field, Relationship, SQLModel
+from datetime import date, datetime, time, timedelta
+
+# Modelo de usuario
+class User(SQLModel, table=True):
+    
+    __tablename__ = "usuarios"
+    
+    id: int= Field(primary_key=True)
+    usuario: str
+    contrasena: str
+    ultimo_inicio_sesion: datetime
+    activo: bool
+    fecha_creacion: datetime
+    fecha_actualizacion: datetime
+    
 
 # Conexión con la base de datos de la tabla Cliente.
 class Client(SQLModel, table=True):
