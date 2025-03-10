@@ -50,8 +50,12 @@ class BaseClient(BaseModel):
         description="El segundo apellido del cliente (opcional). Solo se permiten letras y espacios."
     )
     
-    obligaciones : list["Obligacion"]
-
+    obligaciones: list["Obligacion"] = Field(
+        default=[],
+        title="Obligaciones",
+        description="Lista de obligaciones asociadas al cliente."
+    )
+    
 # ClientIn: Modelo de entrada para la información del cliente.
 class ClientIn(BaseClient):
     pass
@@ -78,6 +82,12 @@ class BaseObligacion(BaseModel):
     id_obligacion: int 
     id_cliente: str
     id_empresa: int 
+
+# Obligacion: Modelo para la información de la obligación.
+class Obligacion(BaseModel):
+    id_obligacion: int
+    id_cliente: str
+    id_empresa: int
 
 # ObligacionIn: Modelo de entrada para la información de la obligación.
 class ObligacionIn(BaseObligacion):
